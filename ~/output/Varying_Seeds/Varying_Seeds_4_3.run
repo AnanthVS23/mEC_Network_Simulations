@@ -1,0 +1,5 @@
+numprocs=1
+
+Reading command line arguments using syntax: python file.py [simConfig=filepath] [netParams=filepath]
+Importing simConfig from /mnt/beegfs/home/avedur/output/Varying_Seeds/Varying_Seeds_4_3_cfg.json
+Loading file /mnt/beegfs/home/avedur/output/Varying_Seeds/Varying_Seeds_4_3_cfg.json ... 

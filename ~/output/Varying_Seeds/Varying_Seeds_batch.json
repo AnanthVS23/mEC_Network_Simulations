@@ -1,0 +1,126 @@
+{
+    "batch": {
+        "batchLabel": "Varying_Seeds",
+        "cfgFile": "cfg.py",
+        "evolCfg": {
+            "fitnessFunc": "removed"
+        },
+        "initCfg": {},
+        "method": "grid",
+        "netParamsFile": "netParams.py",
+        "params": [
+            {
+                "label": "seeds",
+                "values": [
+                    {
+                        "Inet": 7894,
+                        "conn": 4321,
+                        "loc": 4321,
+                        "seed_index": 0,
+                        "stim": 1234
+                    },
+                    {
+                        "Inet": 7895,
+                        "conn": 4322,
+                        "loc": 4322,
+                        "seed_index": 1,
+                        "stim": 1235
+                    },
+                    {
+                        "Inet": 7896,
+                        "conn": 4323,
+                        "loc": 4323,
+                        "seed_index": 2,
+                        "stim": 1236
+                    },
+                    {
+                        "Inet": 7897,
+                        "conn": 4324,
+                        "loc": 4324,
+                        "seed_index": 3,
+                        "stim": 1237
+                    },
+                    {
+                        "Inet": 7898,
+                        "conn": 4325,
+                        "loc": 4325,
+                        "seed_index": 4,
+                        "stim": 1238
+                    },
+                    {
+                        "Inet": 7899,
+                        "conn": 4326,
+                        "loc": 4326,
+                        "seed_index": 5,
+                        "stim": 1239
+                    },
+                    {
+                        "Inet": 7900,
+                        "conn": 4327,
+                        "loc": 4327,
+                        "seed_index": 6,
+                        "stim": 1240
+                    },
+                    {
+                        "Inet": 7901,
+                        "conn": 4328,
+                        "loc": 4328,
+                        "seed_index": 7,
+                        "stim": 1241
+                    },
+                    {
+                        "Inet": 7902,
+                        "conn": 4329,
+                        "loc": 4329,
+                        "seed_index": 8,
+                        "stim": 1242
+                    },
+                    {
+                        "Inet": 7903,
+                        "conn": 4330,
+                        "loc": 4330,
+                        "seed_index": 9,
+                        "stim": 1243
+                    }
+                ]
+            },
+            {
+                "label": "Weight_E2I",
+                "values": [
+                    0.0,
+                    5e-05,
+                    0.0001,
+                    0.00015000000000000001,
+                    0.0002,
+                    0.00025,
+                    0.00030000000000000003,
+                    0.00035,
+                    0.0004,
+                    0.00045000000000000004,
+                    0.0005,
+                    0.00055,
+                    0.0006000000000000001,
+                    0.0006500000000000001,
+                    0.0007,
+                    0.00075,
+                    0.0008,
+                    0.0008500000000000001,
+                    0.0009000000000000001,
+                    0.00095,
+                    0.001
+                ]
+            }
+        ],
+        "runCfg": {
+            "coresPerNode": 1,
+            "folder": "~/output",
+            "mpiCommand": "mpiexec",
+            "nodes": 1,
+            "script": "init.py",
+            "skipCustom": "_raster.png",
+            "type": "hpc_slurm"
+        },
+        "saveFolder": "~/output/Varying_Seeds",
+        "seed": null
+    }
+}

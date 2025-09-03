@@ -1,0 +1,128 @@
+./condrive.c: ../mod/condrive.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "condrive.mod" -o "/mnt/beegfs/home/avedur/NetPyNe_Sims/Automated/mEC_Network_Simulations/x86_64")
+
+./condrive.o: ./condrive.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I"../mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./drive.c: ../mod/drive.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "drive.mod" -o "/mnt/beegfs/home/avedur/NetPyNe_Sims/Automated/mEC_Network_Simulations/x86_64")
+
+./drive.o: ./drive.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I"../mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./exp2synNMDA.c: ../mod/exp2synNMDA.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "exp2synNMDA.mod" -o "/mnt/beegfs/home/avedur/NetPyNe_Sims/Automated/mEC_Network_Simulations/x86_64")
+
+./exp2synNMDA.o: ./exp2synNMDA.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I"../mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./gap.c: ../mod/gap.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "gap.mod" -o "/mnt/beegfs/home/avedur/NetPyNe_Sims/Automated/mEC_Network_Simulations/x86_64")
+
+./gap.o: ./gap.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I"../mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./gclamp.c: ../mod/gclamp.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "gclamp.mod" -o "/mnt/beegfs/home/avedur/NetPyNe_Sims/Automated/mEC_Network_Simulations/x86_64")
+
+./gclamp.o: ./gclamp.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I"../mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./Gfluct.c: ../mod/Gfluct.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "Gfluct.mod" -o "/mnt/beegfs/home/avedur/NetPyNe_Sims/Automated/mEC_Network_Simulations/x86_64")
+
+./Gfluct.o: ./Gfluct.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I"../mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./ka2.c: ../mod/ka2.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "ka2.mod" -o "/mnt/beegfs/home/avedur/NetPyNe_Sims/Automated/mEC_Network_Simulations/x86_64")
+
+./ka2.o: ./ka2.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I"../mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kdr.c: ../mod/kdr.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kdr.mod" -o "/mnt/beegfs/home/avedur/NetPyNe_Sims/Automated/mEC_Network_Simulations/x86_64")
+
+./kdr.o: ./kdr.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I"../mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kv3.c: ../mod/kv3.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kv3.mod" -o "/mnt/beegfs/home/avedur/NetPyNe_Sims/Automated/mEC_Network_Simulations/x86_64")
+
+./kv3.o: ./kv3.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I"../mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./kv7.c: ../mod/kv7.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "kv7.mod" -o "/mnt/beegfs/home/avedur/NetPyNe_Sims/Automated/mEC_Network_Simulations/x86_64")
+
+./kv7.o: ./kv7.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I"../mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./na.c: ../mod/na.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "na.mod" -o "/mnt/beegfs/home/avedur/NetPyNe_Sims/Automated/mEC_Network_Simulations/x86_64")
+
+./na.o: ./na.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I"../mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./nas.c: ../mod/nas.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "nas.mod" -o "/mnt/beegfs/home/avedur/NetPyNe_Sims/Automated/mEC_Network_Simulations/x86_64")
+
+./nas.o: ./nas.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I"../mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./spines.c: ../mod/spines.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "spines.mod" -o "/mnt/beegfs/home/avedur/NetPyNe_Sims/Automated/mEC_Network_Simulations/x86_64")
+
+./spines.o: ./spines.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I"../mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./synapsesnodepression.c: ../mod/synapsesnodepression.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "synapsesnodepression.mod" -o "/mnt/beegfs/home/avedur/NetPyNe_Sims/Automated/mEC_Network_Simulations/x86_64")
+
+./synapsesnodepression.o: ./synapsesnodepression.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I"../mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./synapseswithdepression.c: ../mod/synapseswithdepression.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "synapseswithdepression.mod" -o "/mnt/beegfs/home/avedur/NetPyNe_Sims/Automated/mEC_Network_Simulations/x86_64")
+
+./synapseswithdepression.o: ./synapseswithdepression.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I"../mod" $(INCLUDES) -fPIC -c $< -o $@
+
+./vecevent.c: ../mod/vecevent.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "../mod";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "vecevent.mod" -o "/mnt/beegfs/home/avedur/NetPyNe_Sims/Automated/mEC_Network_Simulations/x86_64")
+
+./vecevent.o: ./vecevent.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I"../mod" $(INCLUDES) -fPIC -c $< -o $@
+

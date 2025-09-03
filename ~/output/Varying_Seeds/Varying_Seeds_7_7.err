@@ -1,0 +1,19 @@
+/var/spool/slurm/d/job4832833/slurm_script: line 13: cd: /mnt/beegfs/home/avedur/output: No such file or directory
+/mnt/beegfs/home/avedur/miniconda3/envs/Netpyne/bin/nrniv:10: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  from pkg_resources import working_set
+NEURON -- VERSION 8.2.3 HEAD (f0ed37010) 2023-09-14
+Duke, Yale, and the BlueBrain Project -- Copyright 1984-2022
+See http://neuron.yale.edu/neuron/credits
+
+Additional mechanisms from files
+ "mod/condrive.mod" "mod/drive.mod" "mod/exp2synNMDA.mod" "mod/gap.mod" "mod/gclamp.mod" "mod/Gfluct.mod" "mod/ka2.mod" "mod/kdr.mod" "mod/kv3.mod" "mod/kv7.mod" "mod/na.mod" "mod/nas.mod" "mod/spines.mod" "mod/synapsesnodepression.mod" "mod/synapseswithdepression.mod" "mod/vecevent.mod"
+Traceback (most recent call last):
+  File "init.py", line 14, in <module>
+    cfg, netParams = sim.readCmdLineArgs(simConfigDefault='cfg.py', netParamsDefault='netParams.py')
+  File "/mnt/beegfs/home/avedur/miniconda3/envs/Netpyne/lib/python3.10/site-packages/netpyne/sim/setup.py", line 277, in readCmdLineArgs
+    cfg = sim.loadSimCfg(cfgPath, setLoaded=False)
+  File "/mnt/beegfs/home/avedur/miniconda3/envs/Netpyne/lib/python3.10/site-packages/netpyne/sim/load.py", line 168, in loadSimCfg
+    data = _loadFile(filename)
+  File "/mnt/beegfs/home/avedur/miniconda3/envs/Netpyne/lib/python3.10/site-packages/netpyne/sim/load.py", line 86, in _loadFile
+    with open(filename, 'r') as fileObj:
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/beegfs/home/avedur/output/Varying_Seeds/Varying_Seeds_7_7_cfg.json'
