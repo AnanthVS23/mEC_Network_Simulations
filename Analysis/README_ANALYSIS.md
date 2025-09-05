@@ -1,0 +1,4 @@
+-- Raster_Plots give combined raster plots for the .pkl files. Using single explicit filename would be better. For automation, the code needs to be edited
+-- Power_Frequency_SC250.py provides .csv or .data files as outputs for 10 different seed formulations and simulations. A box plot based on the output would generate the figures simular to those in Figure 6.
+-- Single_Sims_Analysis_SC250.py generates individual figures similar to figure 7. 
+-- The power_frequency data was converted to .xlsx to use pandas and seaborn to obtain the box plots. Box_Plot_All.py and Box_Plot_Freq.py can be used to plot box plots as in Figure 6. The x-axis values are set to the weights used in pS. These needs to be multiplied by 120 to get the values in nS (nano Seimens). The latter code has the split of frequency values at the 100pS weight or 12nS conductance. 
