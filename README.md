@@ -1,4 +1,6 @@
 # mEC Model
+
+This is also the revised version based on the reviewer's suggestions
  
  This code was written using NetPyNE (Networks with Python and NEURON). For more information about the tool, see [NetPyNE docs](http://doc.netpyne.org/)
 
