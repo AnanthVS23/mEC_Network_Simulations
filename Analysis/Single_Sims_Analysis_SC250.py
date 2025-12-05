@@ -57,7 +57,7 @@ for file in glob.glob("../output/Ant*EI_0.03*gsinInh7.0_gsinExc3.0*_II_0.5_GAP_T
     tSim = fileInfo['simData']['t']
 
 cellTr0 = np.array(cellTrace['0'])
-FileID = "Single_Sim_Plots/0409_PING" 
+FileID = base_output_dir+"PING" 
 
 CapCurrentLeft = 70; CapCurrentRight = 80;
 waveletPlotPoints = 0
@@ -138,7 +138,7 @@ plt.savefig(FileID+fileName+"_Power.png", bbox_inches='tight')
 fig = plt.figure(figsize=(10, 8))
 outer = gridspec.GridSpec(1, 1, wspace=0.3, hspace=0.1)
 
-inner = gridspec.GridSpecFromSubplotSpec(3, 1, subplot_spec=outer[0], wspace=0.1, hspace=0.1, height_ratios=[1,1,1])
+inner = gridspec.GridSpecFromSubplotSpec(2, 1, subplot_spec=outer[0], wspace=0.1, hspace=0.1, height_ratios=[1,1,1])
 
 ax0 = plt.Subplot(fig, inner[0])
 ax0.plot(tSim, y0, 'r-',alpha = 1, label='Unfiltered')
@@ -148,29 +148,15 @@ ax0.spines['right'].set_visible(False)
 ax0.spines['bottom'].set_visible(False)
 ax0.spines['left'].set_visible(True)
 ax0.set_ylabel("Current (pA)")
-ax0.set_ylim([-100,600])#This needs to be adjusted depending on the amplitude of the current
+ax0.set_ylim([-100,1000])#This needs to be adjusted depending on the amplitude of the current
 ax0.set_xticks([])
 ax0.set_xticklabels([])
 ax0.legend(loc='upper right')
 fig.add_subplot(ax0)
 
-ax1 = plt.Subplot(fig, inner[1])
-ax1.plot(tSim, rates, 'b-',label='Filtered 50-300 hz')
-ax1.set_xlim(sim_time-4.*125.,sim_time);
-ax1.spines['top'].set_visible(False)
-ax1.spines['right'].set_visible(False)
-ax1.spines['bottom'].set_visible(False)
-ax1.spines['left'].set_visible(True)
-ax1.set_ylabel("Current (pA)")
-ax1.set_ylim([-250,250])#This needs to be adjusted depending on the amplitude of the current
-ax1.set_xticks([])
-ax1.set_xticklabels([])
-ax1.legend(loc='upper right')
-fig.add_subplot(ax1)
-
 gsin = 5
 
-ax2 = plt.Subplot(fig, inner[2])
+ax2 = plt.Subplot(fig, inner[1])
 t1 = np.linspace(sim_time-4.*125.,sim_time,4*125+1)
 ax2.set_xlim(sim_time-4.*125.,sim_time)
 ax2.plot(t1, gsin*np.sin(2*np.pi*fTheta*t1*1e-3-np.pi/2),color = 'k')
@@ -196,24 +182,10 @@ plotPow(z,Ncycs=1,dt=dt_rec,fs=freqs,levels=np.linspace(0.,maxPowerAvg,150,endpo
 #plt.rcParams['ps.usedistiller'] = 'xpdf' # or 'ghostscript'
 plt.savefig(FileID+fileName+'_Pow.eps')
 plt.savefig(FileID+fileName+'_Pow.png')
-plt.savefig(FileID+fileName+'_Pow.svg')
 #plt.rcParams['text.usetex'] = False #return to default.
 #plt.rcParams['ps.usedistiller'] = None #return to default.
 
 
 #########################################################################################################################################
 
-
-
-"""plt.figure()
-plotPow(z,Ncycs=1,dt=dt_rec,fs=freqs,levels=np.linspace(100.,maxPowerAvg,300,endpoint=True))
-#plt.ylabel("Gamma Frequency (Hz)")
-#plt.xlabel("Stim Theta Phase (rad)")
-#plt.rcParams['font.family'] = 'Arial'  # Use LaTeX for text rendering
-#plt.rcParams['ps.usedistiller'] = 'xpdf' # or 'ghostscript'
-plt.savefig(FileID+'Pow_2.eps')
-plt.savefig(FileID+'Pow_2.png')
-plt.savefig(FileID+'Pow_2.svg')
-#plt.rcParams['text.usetex'] = False #return to default.
-#plt.rcParams['ps.usedistiller'] = None #return to default."""
 

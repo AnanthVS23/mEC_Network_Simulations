@@ -15,7 +15,7 @@ except:
 # Network parameters
 netParams = specs.NetParams()  # object of class NetParams to store the network parameters
 netParams.defaultDelay = 0 #This is because it creates gap junctions with defaultDelay = 1 ms if not 
-netParams.defaultThreshold = -30.0
+netParams.defaultThreshold = -10.0
 ###############################################################################
 ## Create and load parameters for the neurons and simulations
 ###############################################################################
@@ -63,8 +63,8 @@ for k in range(cfg.NumModels):
     else:
         cellRule['secs']['soma'] = {'geom': {}, 'mechs': {}, 'pointps': {}}
         cellRule['secs']['soma']['pointps']['optodrive'] = {'mod' : 'optodrive', 'gsin': drives[k], 'Ese': 0 , 'f': cfg.fsin}
-    if cfg.NOISE==True:
-        cellRule['secs']['soma']['pointps']['InVivoNoise'] = {'mod' : 'Gfluct','g_e0': cfg.MeanENoise, 'g_i0': cfg.MeanINoise, 'std_e': cfg.StdENoise, 'std_i': cfg.StdINoise}
+    #if cfg.NOISE==True:
+    #    cellRule['secs']['soma']['pointps']['InVivoNoise'] = {'mod' : 'Gfluct','g_e0': cfg.MeanENoise, 'g_i0': cfg.MeanINoise, 'std_e': cfg.StdENoise, 'std_i': cfg.StdINoise}
     if cfg.GAP==True:
         cellRule['secs']['soma']['geom'] = {'diam': 20, 'L': lengthsGapJunct[k], 'cm': 1}   # soma geometry
         cellRule['secs']['soma']['mechs']['pas'] = {'g': ConductWithGapJunctSA[k], 'e': ReversPotWithGapJunct[k]}
@@ -97,12 +97,11 @@ SCcell['secs']['soma']['mechs']['hh'] = {'gnabar': '0.12*normal(1,3e-2)', 'gkbar
 #SCcell['secs']['soma']['mechs']['hh'] = {'gnabar': '0.12*uniform(1,7e-2)', 'gkbar': '0.036*uniform(1,7e-2)', 'gl': '0.0000357*uniform(1.2,1e-1)', 'el': '-68*uniform(1,2e-1)'}
 SCcell['secs']['soma']['vinit'] = np.random.uniform(-65,-58) # set initial membrane potential
 netParams.cellParams['SC'] = SCcell
-
 ###############################################################################
 ## Synaptic mechs
 ###############################################################################
 # Inhibitory synapses FS-> FS
-tau_fall=2.
+tau_fall=4.
 tau_rise=0.3
 c_fall = 1/tau_fall
 c_rise = 1/tau_rise
@@ -167,7 +166,7 @@ netParams.connParams['FS->SC'] = {
         'sec':'soma',
         'probability': cfg.ConnProbIE,
         #am subbing weight for conductance, gms was in nanosiemens and needs to be converted to uS
-        'weight': 'lognormal(1.65,2.17)*1e-3/0.3',                      # weight of each connection# Take into account that numpy and NEURON arguments are different (numpy args are mean and std for subjacent normal distribution, not the lognorm as in NEURON)
+        'weight': cfg.Weight_I2E,#'2.5*lognormal(1.65,2.17)*1e-3',               # weight of each connection# Take into account that numpy and NEURON arguments are different (numpy args are mean and std for subjacent normal distribution, not the lognorm as in NEURON)
         'synMech': 'inhFSSC',                   # target inh synapse
          'delay': '0.6+(1-0.6)*uniform(0,1)'}                    # delay
 
