@@ -28,7 +28,7 @@ if not os.path.exists(fileID):
     os.makedirs(fileID)
 
 
-for file in glob.glob("../Data_Single_Sims/More_Inhib_0_data.pkl"):
+for file in glob.glob("../output/*_data.pkl"):
     fileInfo = loadData(file)
     fileName = fileInfo['simConfig']['filename'][8:]
     print(fileName)
@@ -149,7 +149,7 @@ fig.add_subplot(ax3)
 
 fig.tight_layout()
 #fileName = '0110_Plots/FS_gsin5nS_gsinEx2nS_Hyper_Traces'
-fig.savefig(fileID+'Traces_2.png', bbox_inches='tight',dpi = 300)
-fig.savefig(fileID+'Traces_2.eps', bbox_inches='tight', dpi = 300)
+fig.savefig(fileID+fileName+'Traces.png', bbox_inches='tight',dpi = 300)
+fig.savefig(fileID+fileName+'Traces.eps', bbox_inches='tight', dpi = 300)
 #fig.savefig(fileID+'.svg', bbox_inches='tight')
 
